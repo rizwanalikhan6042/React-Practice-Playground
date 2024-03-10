@@ -1,0 +1,33 @@
+Question: Create a simple React component that displays "Hello, World!" 
+// HelloWorldComponent.js
+
+import React from 'react';
+
+function HelloWorldComponent() {
+  return <div>Hello, World!</div>;
+}
+
+export default HelloWorldComponent;
+
+Question: Implement a counter component in React that increments its count value on button click
+
+// CounterComponent.js
+
+import React, { useState } from 'react';
+
+function CounterComponent() {
+  const [count, setCount] = useState(0);
+
+  const incrementCount = () => {
+    setCount(prevCount => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={incrementCount}>Increment</button>
+    </div>
+  );
+}
+
+export default CounterComponent;
