@@ -1,0 +1,21 @@
+function makePurchase(item) {
+  return new Promise(function(resolve, reject) {
+    if (item === 'book') {
+      resolve('Order for book placed');
+    } else {
+      reject('Order cannot be placed');
+    }
+  });
+}
+
+function processPurchase(purchaseOrder) {
+  return new Promise(function(resolve) {
+    resolve(`${purchaseOrder} and dispatched`);
+  });
+}
+
+function generateReceipt(processedOrder) {
+  return new Promise(function(resolve) {
+    resolve(`${processedOrder} and Receipt generated with $20`);
+  });
+}
