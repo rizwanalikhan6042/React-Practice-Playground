@@ -1,0 +1,29 @@
+let peopleArray = [
+    {firstName :'John' , age:21},
+    {firstName :'Emily' , age:29}
+] // Mock API
+
+function fetchData(callback){
+
+   setTimeout(function(){
+     let result = ''
+
+     peopleArray.forEach(function(person){
+         result += `<li> ${person.firstName} </li>`
+     })
+
+     document.body.innerHTML = result
+   } ,2000)
+}
+
+
+
+function addPerson(newPerson , callback){
+    setTimeout(function(){
+        peopleArray.push(newPerson)
+        callback()
+    } ,3000)
+}
+
+
+addPerson({firstName:'Sarah' , age:35} , fetchData) // 3 seconds
