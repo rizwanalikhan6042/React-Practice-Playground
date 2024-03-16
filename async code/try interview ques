@@ -1,0 +1,29 @@
+import React from 'react';
+import { useState ,useEffect } from 'react';
+
+function Try(){
+  const [ourValue ,setourValue] = useState('');
+
+  const handleApi = async () =>{
+    let result = await fetch(`https://demo.dataverse.org/api/search?q=${ourValue}`)
+    result = await result.json();
+    setourValue(result.items[0].name);
+    console.log(result.items[0].name)
+}
+
+useEffect(()=>{
+    
+})
+
+    return (
+        <div> 
+  
+      <input onChange={handleApi} value={ourValue}  placeholder='enter product' />
+      
+      
+
+        </div>
+    )
+}
+
+export default Try;
